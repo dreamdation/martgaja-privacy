@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>마트가자 — 개인정보처리방침</title>
+  <title>MartGaja — Privacy Policy</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+      font-family: -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', 'Noto Sans JP', sans-serif;
       background: #f8faf8;
       color: #1a1a1a;
       line-height: 1.8;
@@ -25,6 +25,31 @@
     }
     header h1 { font-size: 1.6rem; font-weight: 800; letter-spacing: -0.5px; }
     header p  { font-size: 0.9rem; margin-top: 6px; opacity: 0.85; }
+
+    /* 언어 전환 */
+    .lang-switch {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 16px;
+    }
+    .lang-btn {
+      background: rgba(255,255,255,0.15);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.35);
+      border-radius: 999px;
+      padding: 5px 14px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .lang-btn:hover { background: rgba(255,255,255,0.28); }
+    .lang-btn.on {
+      background: #fff;
+      color: #2e7d32;
+      border-color: #fff;
+    }
 
     h2 {
       font-size: 1.05rem;
@@ -58,132 +83,406 @@
       font-size: 0.93rem;
     }
     a { color: #2e7d32; }
+    .prevail {
+      margin-top: 28px;
+      font-size: 0.82rem;
+      color: #777;
+      background: #f1f7f1;
+      border-radius: 8px;
+      padding: 12px 14px;
+    }
     footer {
       text-align: center;
-      margin-top: 60px;
+      margin-top: 32px;
       font-size: 0.82rem;
       color: #888;
     }
+    /* 언어별 콘텐츠 토글 */
+    .doc { display: none; }
+    .doc.active { display: block; }
   </style>
 </head>
 <body>
 
 <header>
-  <h1>🛒 마트가자</h1>
-  <p>개인정보처리방침 · Privacy Policy</p>
+  <h1 id="h1">🛒 MartGaja</h1>
+  <p id="sub">Privacy Policy</p>
+  <div class="lang-switch">
+    <button class="lang-btn" data-setlang="en">English</button>
+    <button class="lang-btn" data-setlang="ko">한국어</button>
+    <button class="lang-btn" data-setlang="ja">日本語</button>
+  </div>
 </header>
 
 <div class="container">
 
-  <div class="highlight">
-    본 방침은 앱 서비스 제공자(이하 "운영자")가 <strong>마트가자</strong> 앱(Android)을 운영하면서
-    적용되는 개인정보 처리 방식을 설명합니다.<br>
-    <strong>시행일: 2026년 05월 21일</strong>
+  <!-- ════════════════ ENGLISH ════════════════ -->
+  <div class="doc" data-lang="en">
+    <div class="highlight">
+      This Privacy Policy explains how the app service provider (the "Operator") handles
+      personal information in operating the <strong>MartGaja</strong> app (Android).<br>
+      <strong>Effective date: May 21, 2026</strong>
+    </div>
+
+    <h2>1. Personal information the Operator directly collects</h2>
+    <p>
+      MartGaja has no sign-up, login, or social login.<br>
+      The shopping list and category data you enter are <strong>stored only on your device</strong>
+      and are never transmitted to or stored on the Operator's servers.
+    </p>
+    <div class="highlight">
+      ✅ The Operator does not directly collect any of your personal information.
+    </div>
+
+    <h2>2. Information collected by a third party (Google) — Advertising</h2>
+    <p>
+      This app serves banner ads through <strong>Google AdMob</strong>.
+      To deliver ads, Google may automatically collect the following information.
+    </p>
+    <table>
+      <thead>
+        <tr><th>Data collected</th><th>Collected by</th><th>Purpose</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Advertising ID (GAID)</td><td>Google AdMob</td><td>Personalized advertising</td></tr>
+        <tr><td>Device info (OS version, device name)</td><td>Google AdMob</td><td>Ad optimization</td></tr>
+        <tr><td>IP address</td><td>Google AdMob</td><td>Region-based advertising</td></tr>
+        <tr><td>App usage patterns</td><td>Google AdMob</td><td>Measuring ad display frequency</td></tr>
+      </tbody>
+    </table>
+    <p>
+      Google's Privacy Policy:
+      <a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a><br>
+      To reset the advertising ID (GAID) or disable ad personalization:
+      available on your device under <strong>Settings → Privacy → Ads</strong>.
+    </p>
+
+    <h2>3. Information collected by a third party (Google) — App analytics (Firebase Analytics)</h2>
+    <p>
+      This app uses <strong>Google Firebase Analytics</strong> to improve the service.
+      Firebase Analytics anonymously collects and analyzes app usage patterns, and the collected
+      information is used only in aggregated, statistical form.
+    </p>
+    <table>
+      <thead>
+        <tr><th>Data collected</th><th>Collected by</th><th>Purpose</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>App instance ID (anonymous)</td><td>Google Firebase</td><td>Distinguishing devices (no personal identification)</td></tr>
+        <tr><td>Device info (OS version, device model)</td><td>Google Firebase</td><td>Device compatibility analysis</td></tr>
+        <tr><td>Country / language info</td><td>Google Firebase</td><td>Regional usage statistics</td></tr>
+        <tr><td>App open/close, screen transition events</td><td>Google Firebase</td><td>Usage pattern analysis and service improvement</td></tr>
+        <tr><td>Feature usage events (adding items, selecting categories, etc.)</td><td>Google Firebase</td><td>Prioritizing improvements to key features</td></tr>
+      </tbody>
+    </table>
+    <p>
+      The collected data is processed only as anonymous statistics that cannot identify individuals,
+      and is not sold to third parties.<br>
+      Firebase Privacy Policy:
+      <a href="https://firebase.google.com/support/privacy" target="_blank">https://firebase.google.com/support/privacy</a><br>
+      To disable data collection: on your device under
+      <strong>Settings → Google → Ads → Opt out of Ads Personalization</strong>,
+      or by turning off "Usage &amp; diagnostics" sharing in device settings.
+    </p>
+
+    <h2>4. Information collected by a third party (Google Play) — In-app purchases</h2>
+    <p>
+      If you purchase the "Remove Ads" feature, it is processed through the
+      <strong>Google Play billing system</strong>.
+      Payment information (card number, transaction history, etc.) is managed by Google,
+      and the Operator only receives whether the payment succeeded.
+      The Operator does not store or access payment information.
+    </p>
+
+    <h2>5. Internet access</h2>
+    <p>
+      The app connects to the internet to load ads, process purchases, and send app usage statistics.
+      <strong>All core features—such as adding and checking off shopping list items—work fully offline</strong>,
+      even without internet.
+      Analytics events generated while offline are temporarily stored on the device and sent
+      automatically when a network connection is available.
+    </p>
+
+    <h2>6. Children's privacy</h2>
+    <p>
+      MartGaja is not directed at children under the age of 14.
+      Users under 14 should use the app with the consent of a guardian.
+    </p>
+
+    <h2>7. Changes to this policy</h2>
+    <p>
+      If this Privacy Policy changes, we will give notice through this page 7 days before the change
+      takes effect. Significant changes will be separately announced via a pop-up when the app is updated.
+    </p>
+
+    <h2>8. Contact</h2>
+    <p>
+      For inquiries regarding personal information, please contact us at:<br>
+      📧 <a href="mailto:dreamdation@gmail.com">dreamdation@gmail.com</a>
+    </p>
+
+    <div class="prevail">
+      This policy is provided in Korean, English, and Japanese. In case of any discrepancy between
+      versions, the English version shall prevail.
+    </div>
+    <footer><p>MartGaja | Effective date: 2026-05-21 | © 2026 MartGaja</p></footer>
   </div>
 
-  <!-- 1 -->
-  <h2>1. 운영자가 직접 수집하는 개인정보</h2>
-  <p>
-    마트가자는 회원가입, 로그인, 소셜 로그인 기능이 없습니다.<br>
-    사용자가 입력하는 쇼핑 목록·카테고리 데이터는 <strong>기기 내부에만 저장</strong>되며,
-    운영자 서버로 전송되거나 저장되지 않습니다.
-  </p>
-  <div class="highlight">
-    ✅ 운영자는 사용자의 개인정보를 직접 수집하지 않습니다.
+  <!-- ════════════════ 한국어 ════════════════ -->
+  <div class="doc" data-lang="ko">
+    <div class="highlight">
+      본 방침은 앱 서비스 제공자(이하 "운영자")가 <strong>마트가자</strong> 앱(Android)을 운영하면서
+      적용되는 개인정보 처리 방식을 설명합니다.<br>
+      <strong>시행일: 2026년 05월 21일</strong>
+    </div>
+
+    <h2>1. 운영자가 직접 수집하는 개인정보</h2>
+    <p>
+      마트가자는 회원가입, 로그인, 소셜 로그인 기능이 없습니다.<br>
+      사용자가 입력하는 쇼핑 목록·카테고리 데이터는 <strong>기기 내부에만 저장</strong>되며,
+      운영자 서버로 전송되거나 저장되지 않습니다.
+    </p>
+    <div class="highlight">
+      ✅ 운영자는 사용자의 개인정보를 직접 수집하지 않습니다.
+    </div>
+
+    <h2>2. 제3자(Google)가 수집하는 정보 — 광고</h2>
+    <p>
+      본 앱은 <strong>Google AdMob</strong>을 통해 배너 광고를 게재합니다.
+      광고를 제공하기 위해 Google은 아래 정보를 자동으로 수집할 수 있습니다.
+    </p>
+    <table>
+      <thead>
+        <tr><th>수집 항목</th><th>수집 주체</th><th>목적</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>광고 식별자 (GAID)</td><td>Google AdMob</td><td>맞춤형 광고 제공</td></tr>
+        <tr><td>기기 정보 (OS 버전, 기기명)</td><td>Google AdMob</td><td>광고 최적화</td></tr>
+        <tr><td>IP 주소</td><td>Google AdMob</td><td>지역 기반 광고</td></tr>
+        <tr><td>앱 사용 패턴</td><td>Google AdMob</td><td>광고 노출 빈도 측정</td></tr>
+      </tbody>
+    </table>
+    <p>
+      Google의 개인정보처리방침:
+      <a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a><br>
+      광고 식별자(GAID) 재설정 또는 광고 개인화 비활성화:
+      기기 <strong>설정 → 개인정보 보호 → 광고</strong>에서 가능합니다.
+    </p>
+
+    <h2>3. 제3자(Google)가 수집하는 정보 — 앱 분석(Firebase Analytics)</h2>
+    <p>
+      본 앱은 서비스 개선을 위해 <strong>Google Firebase Analytics</strong>를 사용합니다.
+      Firebase Analytics는 앱 사용 패턴을 익명으로 수집·분석하며, 수집된 정보는 집계·통계 형태로만 활용됩니다.
+    </p>
+    <table>
+      <thead>
+        <tr><th>수집 항목</th><th>수집 주체</th><th>목적</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>앱 인스턴스 ID (익명)</td><td>Google Firebase</td><td>기기 구분 (개인 식별 불가)</td></tr>
+        <tr><td>기기 정보 (OS 버전, 기기 모델)</td><td>Google Firebase</td><td>기기 호환성 분석</td></tr>
+        <tr><td>국가·언어 정보</td><td>Google Firebase</td><td>지역별 사용 통계</td></tr>
+        <tr><td>앱 실행·종료, 화면 전환 이벤트</td><td>Google Firebase</td><td>사용 패턴 분석 및 서비스 개선</td></tr>
+        <tr><td>기능 사용 이벤트 (항목 추가, 카테고리 선택 등)</td><td>Google Firebase</td><td>주요 기능 개선 우선순위 결정</td></tr>
+      </tbody>
+    </table>
+    <p>
+      수집된 데이터는 개인을 특정할 수 없는 익명 통계로만 처리되며, 제3자에게 판매되지 않습니다.<br>
+      Firebase 개인정보처리방침:
+      <a href="https://firebase.google.com/support/privacy" target="_blank">https://firebase.google.com/support/privacy</a><br>
+      데이터 수집 비활성화: 기기 <strong>설정 → Google → 광고 → 광고 개인화 비활성화</strong> 또는
+      기기 설정에서 '사용 및 진단 데이터 공유'를 해제하면 수집을 제한할 수 있습니다.
+    </p>
+
+    <h2>4. 제3자(Google Play)가 수집하는 정보 — 인앱결제</h2>
+    <p>
+      '광고 제거' 기능을 구매하는 경우 <strong>Google Play 결제 시스템</strong>을 통해 처리됩니다.
+      결제 정보(카드번호, 결제 내역 등)는 Google이 관리하며, 운영자는 결제 성공 여부만 전달받습니다.
+      운영자는 결제 정보를 저장하거나 열람하지 않습니다.
+    </p>
+
+    <h2>5. 인터넷 접속</h2>
+    <p>
+      앱은 광고 로드, 구매 처리, 앱 사용 통계 전송을 위해 인터넷에 접속합니다.
+      인터넷 없이도 쇼핑 목록 추가·체크 등 <strong>핵심 기능은 모두 오프라인으로 동작</strong>합니다.
+      오프라인 중 발생한 분석 이벤트는 기기에 임시 저장되었다가 네트워크 연결 시 자동으로 전송됩니다.
+    </p>
+
+    <h2>6. 어린이 개인정보 보호</h2>
+    <p>
+      마트가자는 만 14세 미만 어린이를 대상으로 하지 않습니다.
+      만 14세 미만 사용자는 보호자의 동의 하에 사용하여 주시기 바랍니다.
+    </p>
+
+    <h2>7. 방침 변경 안내</h2>
+    <p>
+      본 개인정보처리방침이 변경될 경우, 변경 7일 전 이 페이지를 통해 고지합니다.
+      중요한 변경사항은 앱 업데이트 시 팝업으로 별도 안내합니다.
+    </p>
+
+    <h2>8. 문의</h2>
+    <p>
+      개인정보와 관련한 문의는 아래로 연락하세요.<br>
+      📧 <a href="mailto:dreamdation@gmail.com">dreamdation@gmail.com</a>
+    </p>
+
+    <div class="prevail">
+      본 방침은 한국어·영어·일본어로 제공됩니다. 각 언어 버전 간 차이가 있을 경우 영문본을 우선합니다.
+    </div>
+    <footer><p>마트가자 | 시행일: 2026-05-21 | © 2026 MartGaja</p></footer>
   </div>
 
-  <!-- 2 -->
-  <h2>2. 제3자(Google)가 수집하는 정보 — 광고</h2>
-  <p>
-    본 앱은 <strong>Google AdMob</strong>을 통해 배너 광고를 게재합니다.
-    광고를 제공하기 위해 Google은 아래 정보를 자동으로 수집할 수 있습니다.
-  </p>
-  <table>
-    <thead>
-      <tr><th>수집 항목</th><th>수집 주체</th><th>목적</th></tr>
-    </thead>
-    <tbody>
-      <tr><td>광고 식별자 (GAID)</td><td>Google AdMob</td><td>맞춤형 광고 제공</td></tr>
-      <tr><td>기기 정보 (OS 버전, 기기명)</td><td>Google AdMob</td><td>광고 최적화</td></tr>
-      <tr><td>IP 주소</td><td>Google AdMob</td><td>지역 기반 광고</td></tr>
-      <tr><td>앱 사용 패턴</td><td>Google AdMob</td><td>광고 노출 빈도 측정</td></tr>
-    </tbody>
-  </table>
-  <p>
-    Google의 개인정보처리방침:
-    <a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a><br>
-    광고 식별자(GAID) 재설정 또는 광고 개인화 비활성화:
-    기기 <strong>설정 → 개인정보 보호 → 광고</strong>에서 가능합니다.
-  </p>
+  <!-- ════════════════ 日本語 ════════════════ -->
+  <div class="doc" data-lang="ja">
+    <div class="highlight">
+      本プライバシーポリシーは、アプリ提供者（以下「運営者」）が <strong>MartGaja</strong> アプリ（Android）を
+      運営するにあたって適用される個人情報の取り扱いについて説明します。<br>
+      <strong>施行日：2026年5月21日</strong>
+    </div>
 
-  <!-- 3 -->
-  <h2>3. 제3자(Google)가 수집하는 정보 — 앱 분석(Firebase Analytics)</h2>
-  <p>
-    본 앱은 서비스 개선을 위해 <strong>Google Firebase Analytics</strong>를 사용합니다.
-    Firebase Analytics는 앱 사용 패턴을 익명으로 수집·분석하며, 수집된 정보는 집계·통계 형태로만 활용됩니다.
-  </p>
-  <table>
-    <thead>
-      <tr><th>수집 항목</th><th>수집 주체</th><th>목적</th></tr>
-    </thead>
-    <tbody>
-      <tr><td>앱 인스턴스 ID (익명)</td><td>Google Firebase</td><td>기기 구분 (개인 식별 불가)</td></tr>
-      <tr><td>기기 정보 (OS 버전, 기기 모델)</td><td>Google Firebase</td><td>기기 호환성 분석</td></tr>
-      <tr><td>국가·언어 정보</td><td>Google Firebase</td><td>지역별 사용 통계</td></tr>
-      <tr><td>앱 실행·종료, 화면 전환 이벤트</td><td>Google Firebase</td><td>사용 패턴 분석 및 서비스 개선</td></tr>
-      <tr><td>기능 사용 이벤트 (항목 추가, 카테고리 선택 등)</td><td>Google Firebase</td><td>주요 기능 개선 우선순위 결정</td></tr>
-    </tbody>
-  </table>
-  <p>
-    수집된 데이터는 개인을 특정할 수 없는 익명 통계로만 처리되며, 제3자에게 판매되지 않습니다.<br>
-    Firebase 개인정보처리방침:
-    <a href="https://firebase.google.com/support/privacy" target="_blank">https://firebase.google.com/support/privacy</a><br>
-    데이터 수집 비활성화: 기기 <strong>설정 → Google → 광고 → 광고 개인화 비활성화</strong> 또는
-    기기 설정에서 '사용 및 진단 데이터 공유'를 해제하면 수집을 제한할 수 있습니다.
-  </p>
+    <h2>1. 運営者が直接収集する個人情報</h2>
+    <p>
+      MartGajaには会員登録・ログイン・ソーシャルログイン機能はありません。<br>
+      ユーザーが入力する買い物リスト・カテゴリのデータは <strong>端末内にのみ保存</strong> され、
+      運営者のサーバーに送信・保存されることはありません。
+    </p>
+    <div class="highlight">
+      ✅ 運営者はユーザーの個人情報を直接収集しません。
+    </div>
 
-  <!-- 4 -->
-  <h2>4. 제3자(Google Play)가 수집하는 정보 — 인앱결제</h2>
-  <p>
-    '광고 제거' 기능을 구매하는 경우 <strong>Google Play 결제 시스템</strong>을 통해 처리됩니다.
-    결제 정보(카드번호, 결제 내역 등)는 Google이 관리하며, 운영자는 결제 성공 여부만 전달받습니다.
-    운영자는 결제 정보를 저장하거나 열람하지 않습니다.
-  </p>
+    <h2>2. 第三者（Google）が収集する情報 — 広告</h2>
+    <p>
+      本アプリは <strong>Google AdMob</strong> を通じてバナー広告を表示します。
+      広告を配信するため、Googleは以下の情報を自動的に収集することがあります。
+    </p>
+    <table>
+      <thead>
+        <tr><th>収集項目</th><th>収集主体</th><th>目的</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>広告識別子（GAID）</td><td>Google AdMob</td><td>パーソナライズ広告の提供</td></tr>
+        <tr><td>端末情報（OSバージョン、端末名）</td><td>Google AdMob</td><td>広告の最適化</td></tr>
+        <tr><td>IPアドレス</td><td>Google AdMob</td><td>地域に基づく広告</td></tr>
+        <tr><td>アプリ利用パターン</td><td>Google AdMob</td><td>広告表示頻度の測定</td></tr>
+      </tbody>
+    </table>
+    <p>
+      Googleのプライバシーポリシー：
+      <a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a><br>
+      広告識別子（GAID）のリセットまたは広告のパーソナライズの無効化：
+      端末の <strong>設定 → プライバシー → 広告</strong> で行えます。
+    </p>
 
-  <!-- 5 -->
-  <h2>5. 인터넷 접속</h2>
-  <p>
-    앱은 광고 로드, 구매 처리, 앱 사용 통계 전송을 위해 인터넷에 접속합니다.
-    인터넷 없이도 쇼핑 목록 추가·체크 등 <strong>핵심 기능은 모두 오프라인으로 동작</strong>합니다.
-    오프라인 중 발생한 분석 이벤트는 기기에 임시 저장되었다가 네트워크 연결 시 자동으로 전송됩니다.
-  </p>
+    <h2>3. 第三者（Google）が収集する情報 — アプリ分析（Firebase Analytics）</h2>
+    <p>
+      本アプリはサービス改善のため <strong>Google Firebase Analytics</strong> を使用します。
+      Firebase Analyticsはアプリの利用パターンを匿名で収集・分析し、収集された情報は集計・統計の形でのみ利用されます。
+    </p>
+    <table>
+      <thead>
+        <tr><th>収集項目</th><th>収集主体</th><th>目的</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>アプリインスタンスID（匿名）</td><td>Google Firebase</td><td>端末の識別（個人を特定不可）</td></tr>
+        <tr><td>端末情報（OSバージョン、端末モデル）</td><td>Google Firebase</td><td>端末互換性の分析</td></tr>
+        <tr><td>国・言語情報</td><td>Google Firebase</td><td>地域別の利用統計</td></tr>
+        <tr><td>アプリの起動・終了、画面遷移イベント</td><td>Google Firebase</td><td>利用パターンの分析およびサービス改善</td></tr>
+        <tr><td>機能利用イベント（項目の追加、カテゴリの選択など）</td><td>Google Firebase</td><td>主要機能の改善の優先順位決定</td></tr>
+      </tbody>
+    </table>
+    <p>
+      収集されたデータは個人を特定できない匿名統計としてのみ処理され、第三者に販売されることはありません。<br>
+      Firebaseプライバシーポリシー：
+      <a href="https://firebase.google.com/support/privacy" target="_blank">https://firebase.google.com/support/privacy</a><br>
+      データ収集の無効化：端末の <strong>設定 → Google → 広告 → 広告のパーソナライズをオフ</strong> にするか、
+      端末設定で「使用状況と診断データの共有」をオフにすると収集を制限できます。
+    </p>
 
-  <!-- 6 -->
-  <h2>6. 어린이 개인정보 보호</h2>
-  <p>
-    마트가자는 만 14세 미만 어린이를 대상으로 하지 않습니다.
-    만 14세 미만 사용자는 보호자의 동의 하에 사용하여 주시기 바랍니다.
-  </p>
+    <h2>4. 第三者（Google Play）が収集する情報 — アプリ内課金</h2>
+    <p>
+      「広告削除」機能を購入する場合、<strong>Google Playの決済システム</strong> を通じて処理されます。
+      決済情報（カード番号、購入履歴など）はGoogleが管理し、運営者は決済の成否のみを受け取ります。
+      運営者は決済情報を保存・閲覧しません。
+    </p>
 
-  <!-- 7 -->
-  <h2>7. 방침 변경 안내</h2>
-  <p>
-    본 개인정보처리방침이 변경될 경우, 변경 7일 전 이 페이지를 통해 고지합니다.
-    중요한 변경사항은 앱 업데이트 시 팝업으로 별도 안내합니다.
-  </p>
+    <h2>5. インターネット接続</h2>
+    <p>
+      アプリは広告の読み込み、購入処理、アプリ利用統計の送信のためにインターネットに接続します。
+      インターネットがなくても、買い物リストの追加・チェックなど <strong>主要機能はすべてオフラインで動作します</strong>。
+      オフライン中に発生した分析イベントは端末に一時保存され、ネットワーク接続時に自動的に送信されます。
+    </p>
 
-  <!-- 8 -->
-  <h2>8. 문의</h2>
-  <p>
-    개인정보와 관련한 문의는 아래로 연락하세요.<br>
-    <!-- TODO: 실제 이메일로 교체 -->
-    📧 <a href="mailto:support@martgaja.com">support@martgaja.com</a>
-  </p>
+    <h2>6. 子どもの個人情報の保護</h2>
+    <p>
+      MartGajaは14歳未満の子どもを対象としていません。
+      14歳未満のユーザーは保護者の同意のもとでご利用ください。
+    </p>
 
-  <footer>
-    <p>마트가자 | 시행일: 2026-05-21 | © 2026 MartGaja</p>
-  </footer>
+    <h2>7. ポリシー変更のお知らせ</h2>
+    <p>
+      本プライバシーポリシーが変更される場合、変更の7日前にこのページでお知らせします。
+      重要な変更はアプリ更新時にポップアップで別途ご案内します。
+    </p>
+
+    <h2>8. お問い合わせ</h2>
+    <p>
+      個人情報に関するお問い合わせは下記までご連絡ください。<br>
+      📧 <a href="mailto:dreamdation@gmail.com">dreamdation@gmail.com</a>
+    </p>
+
+    <div class="prevail">
+      本ポリシーは韓国語・英語・日本語で提供されます。各言語版の間に相違がある場合は英語版が優先されます。
+    </div>
+    <footer><p>MartGaja | 施行日：2026-05-21 | © 2026 MartGaja</p></footer>
+  </div>
 
 </div>
+
+<script>
+  var I18N = {
+    en: { title: 'MartGaja — Privacy Policy',    h1: '🛒 MartGaja',  sub: 'Privacy Policy' },
+    ko: { title: '마트가자 — 개인정보처리방침',     h1: '🛒 마트가자',   sub: '개인정보처리방침 · Privacy Policy' },
+    ja: { title: 'MartGaja — プライバシーポリシー', h1: '🛒 MartGaja',  sub: 'プライバシーポリシー' }
+  };
+  var SUPPORTED = ['en', 'ko', 'ja'];
+
+  function pickInitial() {
+    var q = new URLSearchParams(location.search).get('lang');
+    if (q && SUPPORTED.indexOf(q) !== -1) return q;
+    try {
+      var saved = localStorage.getItem('mg_privacy_lang');
+      if (saved && SUPPORTED.indexOf(saved) !== -1) return saved;
+    } catch (e) {}
+    var nav = (navigator.language || 'en').slice(0, 2).toLowerCase();
+    return SUPPORTED.indexOf(nav) !== -1 ? nav : 'en';
+  }
+
+  function setLang(l) {
+    if (SUPPORTED.indexOf(l) === -1) l = 'en';
+    document.documentElement.lang = l;
+    document.title = I18N[l].title;
+    document.getElementById('h1').textContent = I18N[l].h1;
+    document.getElementById('sub').textContent = I18N[l].sub;
+    var docs = document.querySelectorAll('.doc');
+    for (var i = 0; i < docs.length; i++) {
+      docs[i].classList.toggle('active', docs[i].getAttribute('data-lang') === l);
+    }
+    var btns = document.querySelectorAll('.lang-btn');
+    for (var j = 0; j < btns.length; j++) {
+      btns[j].classList.toggle('on', btns[j].getAttribute('data-setlang') === l);
+    }
+    try { localStorage.setItem('mg_privacy_lang', l); } catch (e) {}
+  }
+
+  var buttons = document.querySelectorAll('.lang-btn');
+  for (var k = 0; k < buttons.length; k++) {
+    buttons[k].addEventListener('click', function () {
+      setLang(this.getAttribute('data-setlang'));
+    });
+  }
+
+  setLang(pickInitial());
+</script>
+
 </body>
 </html>
